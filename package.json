@@ -1,0 +1,49 @@
+{
+  "name": "startina",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "preinst": "npm install -g bun && yarn && bun install --yarn",
+    "postbuild": "pagefind --site dist",
+    "format:check": "prettier --plugin-search-dir=. --check .",
+    "format": "prettier --plugin-search-dir=. --write .",
+    "lint": "eslint .",
+    "syncyarn": "bun bun.lockb",
+    "dev": "bunx --bun astro dev --open",
+    "start": "astro check && astro dev --verbose",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "bun test --watch",
+    "new-post": "node scripts/new-post.js",
+    "biome": "bun run biomelint && bun run biomeformat",
+    "biomeformat": "biome format --write ./src",
+    "biomelint": "biome check --apply ./src"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.1",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/starlight": "^0.17.4",
+    "@astrojs/starlight-tailwind": "^2.0.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.3.5",
+    "million": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@types/bun": "^1.0.5"
+  },
+  "repository": "https://github.com/Frikadellios/startina",
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "license": "MIT"
+}
